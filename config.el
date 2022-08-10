@@ -74,3 +74,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+;; set keybinding
+(define-key evil-motion-state-map (kbd "C-h") #'evil-window-left)
+(define-key evil-motion-state-map (kbd "C-j") #'evil-window-down)
+(define-key evil-motion-state-map (kbd "C-k") #'evil-window-up)
+(define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
+(define-key evil-motion-state-map (kbd "H")   #'evil-beginning-of-line)
+(define-key evil-motion-state-map (kbd "L")   #'evil-end-of-line)
