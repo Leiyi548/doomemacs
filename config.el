@@ -110,11 +110,6 @@
 (define-key evil-motion-state-map (kbd "H")   #'evil-beginning-of-line)
 (define-key evil-motion-state-map (kbd "L")   #'evil-end-of-line)
 
-(map! :leader
-      (:prefix ("b". "buffer")
-       :desc "List bookmarks" "L" #'list-bookmarks
-       :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
-
 ;; Font Setting
 (setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18)
       doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 18)
@@ -125,3 +120,14 @@
 (custom-set-faces!
   '(font-lock-comment-face :slant italic)
   '(font-lock-keyword-face :slant italic))
+
+;; whichkey
+(map! :leader
+      (:prefix ("b". "buffer")
+       :desc "List bookmarks" "L" #'list-bookmarks
+       :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
+
+(map! :leader
+      (
+       :prefix ("gl". "list")
+       :desc "List git repository log" "l" #'magit-log-all-branches))
