@@ -81,3 +81,8 @@
 (define-key evil-motion-state-map (kbd "C-l") #'evil-window-right)
 (define-key evil-motion-state-map (kbd "H")   #'evil-beginning-of-line)
 (define-key evil-motion-state-map (kbd "L")   #'evil-end-of-line)
+
+(map! :leader
+      (:prefix ("b". "buffer")
+       :desc "List bookmarks" "L" #'list-bookmarks
+       :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
