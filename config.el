@@ -88,8 +88,8 @@
        :desc "Save current bookmarks to bookmark file" "w" #'bookmark-save))
 
 ;; Font Setting
-(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 15)
-      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 15)
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 18)
       doom-big-font (font-spec :family "FiraCode Nerd Font" :size 24))
 (after! doom-themes
   (setq doom-themes-enable-bold t
