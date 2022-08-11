@@ -40,9 +40,37 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
-
-
+;; (setq org-directory "~/Document/org/")
+;; (setq org-agenda-files "~/org/Document/org/agenda.org")
+(after! org
+  (setq org-directory "~/Document/Org/"
+        org-agenda-files '("~/Document/Org/agenda.org")
+        org-default-notes-file (expand-file-name "notes.org" org-directory)
+        org-ellipsis " ▼ "
+        ;; org-superstar-headline-bullets-list '("◉" "●" "○" "◆" "●" "○" "◆")
+        ;; org-superstar-item-bullet-alist '((?+ . ?➤) (?- . ?)) ; changes +/- symbols in item lists
+        org-superstar-item-bullet-alist '((?+ . ?➤)) ; changes +/- symbols in item lists
+        org-log-done 'time
+        org-hide-emphasis-markers t
+        ;; ex. of org-link-abbrev-alist in action
+        ;; [[arch-wiki:Name_of_Page][Description]]
+        org-link-abbrev-alist    ; This overwrites the default Doom org-link-abbrev-list
+          '(("google" . "http://www.google.com/search?q=")
+            ("arch-wiki" . "https://wiki.archlinux.org/index.php/")
+            ("ddg" . "https://duckduckgo.com/?q=")
+            ("wiki" . "https://en.wikipedia.org/wiki/"))
+        org-table-convert-region-max-lines 20000
+        org-todo-keywords        ; This overwrites the default Doom org-todo-keywords
+          '((sequence
+             "TODO(t)"           ; A task that is ready to be tackled
+             "BLOG(b)"           ; Blog writing assignments
+             "GYM(g)"            ; Things to accomplish at the gym exercise
+             "PROJ(p)"           ; A project that contains other tasks
+             ;; "VIDEO(v)"          ; Video assignments
+             "WAIT(w)"           ; Something is holding up this task
+             "|"                 ; The pipe necessary to separate "active" states and "inactive" states
+             "DONE(d)"           ; Task has been completed
+             "CANCELLED(c)" )))) ; Task has been cancelled
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
