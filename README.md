@@ -29,7 +29,7 @@ S：另存
 - b：缓冲区列表
 - n/[：切换到前一个缓冲区
 - p/]：切换到后一个缓冲区
- - s：保存当前缓冲区（使用命令和 SPC f s 可能不同）
+- s：保存当前缓冲区（使用命令和 SPC f s 可能不同）
 - S：保存所有缓冲区
 - d/k：关闭当前缓冲区
 - O：关闭其他缓冲区
@@ -84,7 +84,24 @@ S：另存
 
 ### 3.1. 改变字体
 
+``` emacs-lisp
+;; Font Setting
+(setq doom-font (font-spec :family "FiraCode Nerd Font" :size 18)
+      doom-variable-pitch-font (font-spec :family "FiraCode Nerd Font" :size 18)
+      doom-big-font (font-spec :family "FiraCode Nerd Font" :size 24))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+```
+
+## 4. whichkey 使用
+
+这个 winchkey 和vim上的差不多，都是提示你键盘绑定，可是它显示的不多，所以我们想要得到这个键位对应更多的信息，那么我们就需要使用 `C-h` 然后就会在这个层次上进行搜索获得信息。
 
 ## 相关项目
+
 - [github-spacemacs](https://github.com/syl20bnr/spacemacs)
 - [spacemac-doc](https://develop.spacemacs.org/doc/DOCUMENTATION.html)
